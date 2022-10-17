@@ -7,6 +7,6 @@ export default function LoginButton ({ html, state }) {
   const { account = null } = store
   const action = account ? '/auth/login' : '/auth/logout'
   const label = account ? 'Logout' : 'Login'
-  return html`<a href="${action}">${label}</a>`
+  return html`<form action="${action}" method="POST"><button>${label}</button></form>`
 }
 

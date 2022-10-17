@@ -36,16 +36,12 @@ export async function get (req) {
  * @type {EnhanceApiFn}
  */
 export async function post (req) {
-  console.log(req)
   const admin = canI(req, 'admin')
-  console.log(admin)
-
   if (!admin) {
     return {
       statusCode: 401
     }
   }
-
 
   const id = req.pathParameters?.id
 

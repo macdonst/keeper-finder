@@ -13,7 +13,6 @@ export async function post (req) {
     }
   }
 
-  
   const id = req.pathParameters?.id
 
   const session = req.session

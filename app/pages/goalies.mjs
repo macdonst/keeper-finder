@@ -4,13 +4,12 @@
   */
 export default function Html ({ html, state }) {
   const { store } = state
-  let goalies = store.goalies || []
-  const goalie = store.goalie || {}
-  const problems = store.problems || {}
+  const { problems = {}, goalies = [], goalie = {} } = store
 
-  return html`<enhance-page-container>
+  return html`<page-wrapper class="font-sans">
+  <page-nav></page-nav>
+  <enhance-page-container>
   <main>
-    <h1 class="mb1 font-semibold text3">Goalies page</h1>
     ${goalies.map(item => `<article class="mb2">
 <div class="mb0">
   <p class="pb-2"><strong class="capitalize">first_name: </strong>${item?.first_name || ''}</p>
@@ -47,5 +46,5 @@ export default function Html ({ html, state }) {
 </details>
 </main>
 </enhance-page-container>
-  `
+</page-wrapper>`
 }

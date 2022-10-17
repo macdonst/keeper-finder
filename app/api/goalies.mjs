@@ -2,24 +2,32 @@
 /**
   * @typedef {import('@enhance/types').EnhanceApiFn} EnhanceApiFn
   */
+import canI from '../models/auth/can-i.mjs'
 import { getGoalies, upsertGoalie, validate } from '../models/goalies.mjs'
-
 
 /**
  * @type {EnhanceApiFn}
  */
 export async function get (req) {
+  const authenticated = canI(req)
+
+  if (!authenticated) {
+    return {
+      location: '/auth/login'
+    }
+  }
+
   const goalies = await getGoalies()
   if (req.session.problems) {
     let { problems, goalie, ...session } = req.session
     return {
       session,
-      json: { problems, goalies, goalie }
+      json: { account: authenticated, problems, goalies, goalie }
     }
   }
 
   return {
-    json: { goalies }
+    json: { account: authenticated, goalies }
   }
 }
 
@@ -27,6 +35,14 @@ export async function get (req) {
  * @type {EnhanceApiFn}
  */
 export async function post (req) {
+  const authenticated = canI(req)
+
+  if (!authenticated) {
+    return {
+      location: '/auth/login'
+    }
+  }
+
   const session = req.session
   // Validate
   let { problems, goalie } = await validate.create(req)

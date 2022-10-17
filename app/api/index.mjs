@@ -12,7 +12,7 @@ export async function get (req) {
   }
   else {
     return {
-      location: '/'
+      location: '/auth/login'
     }
   }
 }
