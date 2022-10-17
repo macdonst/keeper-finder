@@ -5,7 +5,6 @@
 export default function PageWrapper ({ html }) {
   return html`
   <page-header></page-header>
-  <page-nav></page-nav>
     <slot></slot>
   <page-footer></page-footer>`
 }

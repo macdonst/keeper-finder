@@ -14,7 +14,7 @@ export default function PageNav ({ html }) {
         <a href="/">Scheduled</a>
         <a href="/goalies">Goalies</a>
         <a href="/">History</a>
-        <a href="/">Profile</a>
+        <a href="/profile">Profile</a>
     </nav>`
 }
 
