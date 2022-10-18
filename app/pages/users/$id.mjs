@@ -16,8 +16,8 @@ export default function Html ({ html, state }) {
     <ul>${problems.form}</ul>
   </div>
   <enhance-fieldset legend="User">
-  <enhance-text-input label="Firstname" type="text" id="firstname" name="firstname" value="${user?.firstname}" errors="${problems?.firstname?.errors}"></enhance-text-input>
-  <enhance-text-input label="Lastname" type="text" id="lastname" name="lastname" value="${user?.lastname}" errors="${problems?.lastname?.errors}"></enhance-text-input>
+  <enhance-text-input label="First name" type="text" id="firstname" name="firstname" value="${user?.firstname}" errors="${problems?.firstname?.errors}"></enhance-text-input>
+  <enhance-text-input label="Last name" type="text" id="lastname" name="lastname" value="${user?.lastname}" errors="${problems?.lastname?.errors}"></enhance-text-input>
   <enhance-text-input label="Email" type="email" id="email" name="email" required value="${user?.email}" errors="${problems?.email?.errors}"></enhance-text-input>
   <enhance-fieldset legend="Roles"><label for="roles.role1" class="radius0">
   <div class="mb-3">

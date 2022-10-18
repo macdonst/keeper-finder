@@ -12,8 +12,8 @@ export default function Html ({ html, state }) {
   <main>
     ${goalies.map(item => `<article class="mb2">
 <div class="mb0">
-  <p class="pb-2"><strong class="capitalize">first_name: </strong>${item?.first_name || ''}</p>
-  <p class="pb-2"><strong class="capitalize">last_name: </strong>${item?.last_name || ''}</p>
+  <p class="pb-2"><strong class="capitalize">first name: </strong>${item?.first_name || ''}</p>
+  <p class="pb-2"><strong class="capitalize">last name: </strong>${item?.last_name || ''}</p>
   <p class="pb-2"><strong class="capitalize">email: </strong>${item?.email || ''}</p>
   <p class="pb-2"><strong class="capitalize">phone: </strong>${item?.phone || ''}</p>
   <p class="pb-2"><strong class="capitalize">key: </strong>${item?.key || ''}</p>
@@ -35,8 +35,8 @@ export default function Html ({ html, state }) {
     <ul>${problems.form}</ul>
   </div>
   <enhance-fieldset legend="Goalie">
-  <enhance-text-input label="First_name" type="text" id="first_name" name="first_name" value="${goalie?.first_name}" errors="${problems?.first_name?.errors}"></enhance-text-input>
-  <enhance-text-input label="Last_name" type="text" id="last_name" name="last_name" value="${goalie?.last_name}" errors="${problems?.last_name?.errors}"></enhance-text-input>
+  <enhance-text-input label="First name" type="text" id="first_name" name="first_name" value="${goalie?.first_name}" errors="${problems?.first_name?.errors}"></enhance-text-input>
+  <enhance-text-input label="Last name" type="text" id="last_name" name="last_name" value="${goalie?.last_name}" errors="${problems?.last_name?.errors}"></enhance-text-input>
   <enhance-text-input label="Email" type="email" id="email" name="email" value="${goalie?.email}" errors="${problems?.email?.errors}"></enhance-text-input>
   <enhance-text-input label="Phone" type="tel" id="phone" name="phone" value="${goalie?.phone}" errors="${problems?.phone?.errors}"></enhance-text-input>
   <input type="hidden" id="key" name="key" value="${goalie?.key}" />
