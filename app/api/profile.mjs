@@ -46,7 +46,8 @@ export async function post (req) {
   // eslint-disable-next-line no-unused-vars
   let { problems: removedProblems, user: removed, ...newSession } = session
   try {
-    const result = await upsertUser(user)
+    const currentUser = await getUser(user.key)
+    const result = await upsertUser({...currentUser, ...user})
     return {
       session: newSession,
       json: { user: result },
