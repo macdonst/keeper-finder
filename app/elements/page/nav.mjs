@@ -10,8 +10,8 @@ export default function PageNav ({ html }) {
         }
     </style>
     <nav class="w-full p0 flex items-center justify-center gap0">
-        <a href="/">Request</a>
-        <a href="/">Scheduled</a>
+        <a href="/request">Request</a>
+        <a href="/scheduled">Scheduled</a>
         <a href="/goalies">Goalies</a>
         <a href="/">History</a>
         <a href="/profile">Profile</a>
